@@ -107,14 +107,15 @@ Tailwind의 `dark:` variant 사용:
 
 ## Git 커밋
 
-**Conventional Commits** 형식을 준수합니다:
+**Conventional Commits** 형식을 준수합니다.
 
-```
-feat: 새로운 기능 추가
-fix: 버그 수정
-docs: 문서 변경
-style: 코드 포맷팅
-refactor: 리팩토링
-test: 테스트 추가
-chore: 빌드 설정 등
-```
+자세한 규격과 예제는 [docs/Conventional_Commits.md](docs/Conventional_Commits.md)를 참고하세요.
+
+주요 커밋 타입:
+- `feat`: 새로운 기능 추가
+- `fix`: 버그 수정
+- `docs`: 문서 변경
+- `style`: 코드 포맷팅
+- `refactor`: 리팩토링
+- `test`: 테스트 추가
+- `chore`: 빌드 설정 등
