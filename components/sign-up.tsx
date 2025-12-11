@@ -44,19 +44,19 @@ export default function SignUp() {
   return (
     <Card className="z-50 rounded-md rounded-t-none max-w-md">
       <CardHeader>
-        <CardTitle className="text-lg md:text-xl">Sign Up</CardTitle>
+        <CardTitle className="text-lg md:text-xl">회원가입</CardTitle>
         <CardDescription className="text-xs md:text-sm">
-          Enter your information to create an account
+          계정을 생성하려면 정보를 입력하세요
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="grid gap-2">
-              <Label htmlFor="first-name">First name</Label>
+              <Label htmlFor="first-name">이름</Label>
               <Input
                 id="first-name"
-                placeholder="Max"
+                placeholder="길동"
                 required
                 onChange={(e) => {
                   setFirstName(e.target.value);
@@ -65,10 +65,10 @@ export default function SignUp() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="last-name">Last name</Label>
+              <Label htmlFor="last-name">성</Label>
               <Input
                 id="last-name"
-                placeholder="Robinson"
+                placeholder="홍"
                 required
                 onChange={(e) => {
                   setLastName(e.target.value);
@@ -78,7 +78,7 @@ export default function SignUp() {
             </div>
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">이메일</Label>
             <Input
               id="email"
               type="email"
@@ -91,29 +91,29 @@ export default function SignUp() {
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">비밀번호</Label>
             <Input
               id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="new-password"
-              placeholder="Password"
+              placeholder="비밀번호"
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">Confirm Password</Label>
+            <Label htmlFor="password">비밀번호 확인</Label>
             <Input
               id="password_confirmation"
               type="password"
               value={passwordConfirmation}
               onChange={(e) => setPasswordConfirmation(e.target.value)}
               autoComplete="new-password"
-              placeholder="Confirm Password"
+              placeholder="비밀번호 확인"
             />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="image">Profile Image (optional)</Label>
+            <Label htmlFor="image">프로필 이미지 (선택 사항)</Label>
             <div className="flex items-end gap-4">
               {imagePreview && (
                 <div className="relative w-16 h-16 rounded-sm overflow-hidden">
@@ -176,7 +176,7 @@ export default function SignUp() {
             {loading ? (
               <Loader2 size={16} className="animate-spin" />
             ) : (
-              "Create an account"
+              "계정 생성"
             )}
           </Button>
         </div>
@@ -184,7 +184,7 @@ export default function SignUp() {
       <CardFooter>
         <div className="flex justify-center w-full border-t py-4">
           <p className="text-center text-xs text-neutral-500">
-            Secured by <span className="text-orange-400">better-auth.</span>
+            보안: <span className="text-orange-400">better-auth.</span>
           </p>
         </div>
       </CardFooter>

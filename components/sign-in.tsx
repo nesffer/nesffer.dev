@@ -27,15 +27,15 @@ export default function SignIn() {
   return (
     <Card className="max-w-md">
       <CardHeader>
-        <CardTitle className="text-lg md:text-xl">Sign In</CardTitle>
+        <CardTitle className="text-lg md:text-xl">로그인</CardTitle>
         <CardDescription className="text-xs md:text-sm">
-          Enter your email below to login to your account
+          계정에 로그인하려면 이메일을 입력하세요
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">이메일</Label>
             <Input
               id="email"
               type="email"
@@ -50,16 +50,16 @@ export default function SignIn() {
 
           <div className="grid gap-2">
             <div className="flex items-center">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">비밀번호</Label>
               <Link href="#" className="ml-auto inline-block text-sm underline">
-                Forgot your password?
+                비밀번호를 잊으셨나요?
               </Link>
             </div>
 
             <Input
               id="password"
               type="password"
-              placeholder="password"
+              placeholder="비밀번호"
               autoComplete="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -73,7 +73,7 @@ export default function SignIn() {
                 setRememberMe(!rememberMe);
               }}
             />
-            <Label htmlFor="remember">Remember me</Label>
+            <Label htmlFor="remember">로그인 상태 유지</Label>
           </div>
 
           <Button
@@ -100,7 +100,7 @@ export default function SignIn() {
             {loading ? (
               <Loader2 size={16} className="animate-spin" />
             ) : (
-              <p> Login </p>
+              <p> 로그인 </p>
             )}
           </Button>
 
@@ -154,7 +154,7 @@ export default function SignIn() {
                   d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
                 ></path>
               </svg>
-              Sign in with Google
+              Google 로그인
             </Button>
             <Button
               variant="outline"
@@ -188,7 +188,7 @@ export default function SignIn() {
                   d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
                 ></path>
               </svg>
-              Sign in with Github
+              GitHub 로그인
             </Button>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function SignIn() {
       <CardFooter>
         <div className="flex justify-center w-full border-t py-4">
           <p className="text-center text-xs text-neutral-500">
-            built with{" "}
+            제작:{" "}
             <Link
               href="https://better-auth.com"
               className="underline"
