@@ -27,11 +27,13 @@ bun run lint
 ## 기술 스택 및 설정
 
 ### 프레임워크
+
 - **Next.js 16.0.7** (App Router)
 - **React 19.2.0**
 - **TypeScript** (strict 모드)
 
 ### 스타일링
+
 - **Tailwind CSS v4** (`@tailwindcss/postcss`)
 - **shadcn/ui** (new-york 스타일)
 - 다크모드: 커스텀 variant `@custom-variant dark (&:is(.dark *))`를 사용
@@ -40,9 +42,11 @@ bun run lint
 ### 경로 별칭
 
 TypeScript paths 설정:
+
 - `@/*` → 프로젝트 루트
 
 shadcn/ui 별칭:
+
 - `@/components` → 컴포넌트
 - `@/components/ui` → UI 컴포넌트
 - `@/lib` → 유틸리티
@@ -86,9 +90,9 @@ bunx shadcn@latest add card
 여러 className을 조합할 때 `cn()` 유틸리티 사용:
 
 ```tsx
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-<div className={cn("base-class", variant && "variant-class", className)} />
+<div className={cn("base-class", variant && "variant-class", className)} />;
 ```
 
 ### 다크모드
@@ -112,6 +116,7 @@ Tailwind의 `dark:` variant 사용:
 자세한 규격과 예제는 [docs/Conventional_Commits.md](docs/Conventional_Commits.md)를 참고하세요.
 
 주요 커밋 타입:
+
 - `feat`: 새로운 기능 추가
 - `fix`: 버그 수정
 - `docs`: 문서 변경
