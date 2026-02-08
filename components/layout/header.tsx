@@ -5,7 +5,10 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-sm">
+    <header
+      className="sticky top-0 z-40 bg-background/70 backdrop-blur-xl"
+      style={{ boxShadow: "var(--shadow-sm)" }}
+    >
       <Container className="flex h-14 items-center justify-between">
         <Link href="/" className="font-semibold text-foreground">
           Nesffer

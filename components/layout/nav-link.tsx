@@ -18,7 +18,7 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "text-sm transition-colors hover:text-foreground",
+        "text-sm transition-colors duration-300 hover:text-foreground",
         isActive ? "text-foreground font-medium" : "text-muted-foreground",
       )}
     >

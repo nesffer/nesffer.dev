@@ -6,28 +6,35 @@ async function RecentPosts() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-12">
-      <div className="flex items-center justify-between mb-6">
+    <section className="py-16">
+      <div className="mb-8 flex items-center justify-between">
         <h2 className="text-xl font-semibold">최근 글</h2>
         <Link
           href="/blog"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
-          모든 글 →
+          모두 보기
         </Link>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         {posts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group flex items-baseline justify-between gap-4 py-2"
+            className="-mx-4 rounded-lg border-b border-border/50 px-4 py-5 transition-colors duration-300 hover:bg-muted/30"
           >
-            <span className="font-medium group-hover:text-primary transition-colors">
-              {post.frontmatter.title}
-            </span>
-            <span className="text-sm text-muted-foreground shrink-0">
-              {new Date(post.frontmatter.date).toLocaleDateString("ko-KR")}
+            <span className="font-medium">{post.frontmatter.title}</span>
+            {post.frontmatter.description && (
+              <p className="mt-1 line-clamp-1 text-sm text-muted-foreground">
+                {post.frontmatter.description}
+              </p>
+            )}
+            <span className="mt-2 block text-sm text-muted-foreground">
+              {new Date(post.frontmatter.date).toLocaleDateString("ko-KR", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
             </span>
           </Link>
         ))}
