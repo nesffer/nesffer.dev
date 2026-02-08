@@ -66,6 +66,16 @@
           }
         }
       }
+    },
+    {
+      "includes": ["components/content/markdown-renderer.tsx"],
+      "linter": {
+        "rules": {
+          "security": {
+            "noDangerouslySetInnerHtml": "off"
+          }
+        }
+      }
     }
   ],
   "assist": {
