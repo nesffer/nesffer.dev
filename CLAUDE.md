@@ -7,7 +7,10 @@
 ```bash
 bun dev          # 개발 서버 실행 (http://localhost:3000)
 bun run build    # 프로덕션 빌드
-bun run lint     # ESLint 실행
+bun run lint     # Biome 린터 실행
+bun run format   # Biome 포매터 실행
+bun run check    # 린트 + 포맷 통합 검사
+bun run check:fix # 통합 검사 + 자동 수정
 bun start        # 프로덕션 서버 실행
 ```
 
@@ -16,6 +19,14 @@ bun start        # 프로덕션 서버 실행
 ## 아키텍처
 
 Next.js 16 App Router 프로젝트 (React 19) — 개인 웹사이트/포트폴리오.
+
+### 린터/포매터: Biome
+
+**Biome** 단독 사용 (ESLint/Prettier 없음). `biome.json`에서 설정.
+- 코드 스타일: 세미콜론 필수, 싱글 쿼트, 2칸 스페이스 들여쓰기
+- 린트: recommended 규칙 + a11y + React Hooks
+- import 자동 정렬 활성화
+- `components/ui/`는 shadcn 생성 코드이므로 일부 a11y 규칙 완화
 
 ### 컴포넌트 시스템: shadcn base-nova + Base UI
 
@@ -26,19 +37,19 @@ Next.js 16 App Router 프로젝트 (React 19) — 개인 웹사이트/포트폴�
 
 패턴 예시 (모든 UI 컴포넌트가 이 구조를 따름):
 ```tsx
-import { Button as ButtonPrimitive } from "@base-ui/react/button"
-import { cva } from "class-variance-authority"
+import { Button as ButtonPrimitive } from '@base-ui/react/button';
+import { cva } from 'class-variance-authority';
 
-const buttonVariants = cva("...", { variants: { ... } })
+const buttonVariants = cva('...', { variants: { ... } });
 
 function Button({ className, variant, size, ...props }) {
   return (
     <ButtonPrimitive
-      data-slot="button"
+      data-slot='button'
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
-  )
+  );
 }
 ```
 
